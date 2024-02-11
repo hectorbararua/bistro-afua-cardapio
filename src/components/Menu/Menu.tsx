@@ -13,9 +13,9 @@ export default function Menu() {
             <MenuTitle title="Lonk Necks" href="#Lonk Necks" />
             <MenuTitle title="Drinks" href="#Drinks" />
             <MenuTitle title="Bebida" href="#Bebida" />
-            <MenuTitle title="Hamburguer" href="#Hamburguer" />
+            {/* <MenuTitle title="Hamburguer" href="#Hamburguer" />
             <MenuTitle title="Combos" href="#Combos" />
-            <MenuTitle title="Adicionais de Hamburger" href="#Adicionais de Hamburger" />
+            <MenuTitle title="Adicionais de Hamburger" href="#Adicionais de Hamburger" /> */}
         </StyledMenu>
     )
 } 
