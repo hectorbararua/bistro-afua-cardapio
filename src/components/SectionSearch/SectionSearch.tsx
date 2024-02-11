@@ -11,7 +11,7 @@ export default function SectionSearch({ change, value }: SearchInputProps) {
 
     return (
         <StyledSectionSearch>
-            <CiSearch size={22} style={{ padding: '15px' }} />
+            <CiSearch size={22} style={{ padding: '15px', color:'#fff' }} />
             <SearchInput change={change} value={value} />
         </StyledSectionSearch>
     )
