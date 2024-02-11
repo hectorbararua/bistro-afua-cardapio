@@ -6,6 +6,7 @@ export const StyledSearchInput = styled.input`
     outline: none;
     width: 90%;
     height: 90%;
+    color: #fff;
 
     &::-webkit-search-cancel-button {
         -webkit-appearance: none;
