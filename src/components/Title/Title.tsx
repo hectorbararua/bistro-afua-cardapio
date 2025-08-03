@@ -4,7 +4,7 @@ export default function Title() {
 
   return (
     <StyledTitle>
-      Bistro Afuá
+      Lacerda Acessórios
     </StyledTitle>
   )
 

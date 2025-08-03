@@ -1,11 +1,12 @@
 import styled from "styled-components";
 
 export const StyledSearchInput = styled.input`
-    background-color: transparent; 
+    // background-color: transparent; 
     border: none; 
+    border-radius: 10px; 
     outline: none;
-    width: 90%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     color: #fff;
 
     &::-webkit-search-cancel-button {
