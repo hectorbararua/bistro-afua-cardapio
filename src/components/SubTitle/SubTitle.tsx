@@ -4,7 +4,7 @@ export default function SubTitle() {
 
   return (
     <StyledSubTitle>
-      Bar e Restaurante
+      Lacerda Acessórios
     </StyledSubTitle>
   )
 

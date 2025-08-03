@@ -16,8 +16,8 @@ export interface FoodItem {
 export const typeList: FoodType = {
     Entrada: [
         {
-            name: 'Isca de Filé c/Fritas',
-            description: '',
+            name: 'Isca de Filé',
+            description: 'Arroz, feijão, farofa, salada.',
             price: 40,
             img: fileComFritas
         },

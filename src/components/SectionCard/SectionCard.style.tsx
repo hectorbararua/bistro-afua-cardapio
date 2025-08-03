@@ -11,10 +11,23 @@ export const StyledSectionCard = styled.div`
 `
 
 export const StyledBox = styled.div`
-    margin-top: 250px;
+    margin-top: 180px;
+    width: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+    
 `
 
 export const StyledSection = styled.div`
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* ou space-between */
+  gap: 16px;
+  padding: 16px 0;
+    width: 100%;
+    padding: 16px;
+    box-sizing: border-box;
+
 `
 
 export const StyledDivImg = styled.div`
@@ -22,45 +35,63 @@ export const StyledDivImg = styled.div`
     width: 140px;
 `
 
-export const StyledImg = styled.img`
-    height: 100%;
-    width: 100%;
-    border-radius: 10px;
-`
 
-export const StyledItemType = styled.h2`
-    font-size: 18px;
-    margin-left: 25px;
-    text-transform: uppercase;
-    font-family: 'Open Sans';
-    padding-top: 48px;
-    padding-bottom: 15px;
+export const StyledCard = styled.div`
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 16px 12px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-family: 'Open Sans', sans-serif;
+  margin: auto;
+  width: 100%;
+  max-width: 130px; /* controla o tamanho máximo do card */
+`;
 
-    &#Entrada {
-        padding-top: 5px;
-    }
-`
+export const StyledCardImage = styled.img`
+  height: 90px;
+  object-fit: contain;
+  margin-bottom: 12px;
+`;
 
-export const StyledItemName = styled.h3`
-    display: flex;
-    font-size: 16px;
-    font-weight: 700;
-    max-width: 175px;
-    margin: 0;
-    color: #202020;
-`
-export const StyledDescription = styled.p`
-    color: #666262;
-    font-size: 12px;
-    overflow: auto;
-    max-height: 50px;
-    max-width: 175px;
-    margin-bottom: 4px;
-`
+export const StyledCardName = styled.h3`
+  font-size: 14px;
+  font-weight: 600;
+  color: #333;
+  margin: 8px 0;
+`;
 
-export const StyledPrice = styled.p`
-    color: #202020;
-    font-size: 11px;
-    font-weight: 800;
-    margin: 0;
-`
+export const StyledCardPrice = styled.p`
+  font-size: 14px;
+  font-weight: bold;
+  color: #1e1e1e;
+  margin: 8px 0 16px;
+`;
+
+export const StyledButtonGroup = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 5px;
+`;
+
+export const StyledCardButton = styled.button<{ primary?: boolean }>`
+  flex: 1;
+  padding: 5px;
+  font-size: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: ${({ primary }) => (primary ? '#007bff' : '#e1e1e1')};
+  color: ${({ primary }) => (primary ? '#fff' : '#333')};
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover {
+    background-color: ${({ primary }) => (primary ? '#0056b3' : '#d4d4d4')};
+  }
+`;
