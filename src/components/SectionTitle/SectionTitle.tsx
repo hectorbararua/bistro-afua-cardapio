@@ -1,15 +1,13 @@
 import LogoBistro from "../LogoBistro/LogoBistro";
-import SubTitle from "../SubTitle/SubTitle";
-// import Title from "../Title/Title";
+import Title from "../Title/Title";
 import { StyledSectionTitle } from "./SectionTitle.style";
 import Logo from '../../assets/coquetel-na-taca-de-vinho.png'
 
 export default function SectionTitle() {
     return (
         <StyledSectionTitle>
-            <LogoBistro src={Logo} alt='Logo' />
-            {/* <Title /> */}
-            <SubTitle />
+            <LogoBistro src={Logo} alt='Logo Lacerda Acessórios' />
+            <Title />
         </StyledSectionTitle>
     )
 }

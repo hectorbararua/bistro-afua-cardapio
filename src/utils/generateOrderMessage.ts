@@ -55,26 +55,25 @@ export function generateOrderMessage(cart: FoodItem[], info: OrderInfo) {
   const total = subtotal + info.deliveryFee;
 
   return `
-NÚMERO DO PEDIDO: ${info.orderNumber}                  
-Nome Cardápio: ${info.menuName}      
-Nome do cliente: ${info.customerName}      
-Número do telefone: ${info.customerPhone}      
-Forma de pagamento: ${info.paymentMethod}                             
-Tipo de entrega: ${info.deliveryType}             
-Tempo estimado de entrega: ${info.estimatedTime}       
-Endereço para entrega: ${info.address}        
+*PEDIDO LACERDA ACESSÓRIOS*
+------------------------
+*NÚMERO DO PEDIDO:* ${info.orderNumber}                  
+*Cliente:* ${info.customerName}      
+*Telefone:* ${info.customerPhone}      
+*Forma de pagamento:* ${info.paymentMethod}                             
+*Tipo de entrega:* ${info.deliveryType}             
+*Tempo estimado:* ${info.estimatedTime}       
+*Endereço:* ${info.address}        
 
-RESUMO DO PEDIDO:          
-${cartLines.join("\n\n")}
+*DETALHES DO PEDIDO:*          
+${cartLines.join("\n")}
             
-Taxa de entrega: ${formatCurrency(info.deliveryFee)}            
-TOTAL: ${formatCurrency(total)}      
+*Taxa de entrega:* ${formatCurrency(info.deliveryFee)}            
+*TOTAL:* ${formatCurrency(total)}      
 
-Nome da chave Pix: 
-👉 ${info.pixName}    
-
-Chave Pix: 
-👉 ${info.pixKey}          
+*Dados para Pagamento:*
+*Nome da chave Pix:* ${info.pixName}    
+*Chave Pix:* ${info.pixKey}          
 
 Acompanhe seu pedido através do link abaixo:      
 ${info.trackingLink}

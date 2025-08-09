@@ -11,9 +11,10 @@ import { getWhatsAppLink } from "../../utils/whatsapp";
 interface SectionSearchProps {
   change: (event: React.ChangeEvent<HTMLInputElement>) => void;
   value: string;
+  activeCategory?: string;
 }
 
-export default function Header({ change, value }: SectionSearchProps) {
+export default function Header({ change, value, activeCategory = 'Entrada' }: SectionSearchProps) {
   const [scrolled, setScrolled] = useState(false);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const { cart, increment, decrement, removeFromCart } = useCart();
@@ -33,23 +34,32 @@ export default function Header({ change, value }: SectionSearchProps) {
     (acc, item) => acc + item.price * (item.quantity || 1),
     0
   );
+  
+  // Gera um número de pedido único com formato MMDD-XXXX (mês, dia, 4 caracteres aleatórios)
+  const generateOrderNumber = () => {
+    const date = new Date();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    const random = Math.random().toString(36).substring(2, 6);
+    return `${month}${day}-${random}`;
+  };
 
   const handleSendToWhatsApp = () => {
   const orderInfo: OrderInfo = {
-    orderNumber: "0032-b2d93ee4",
-    menuName: "Cozinha Imperial",
+    orderNumber: generateOrderNumber(),
+    menuName: "Lacerda Acessórios",
     customerName: "Thiago Lacerda",
     customerPhone: "(96) 9 8131-9121",
     paymentMethod: "Pix",
     deliveryType: "Entrega",
-    estimatedTime: "Entre 30 e 60 minutos",
+    estimatedTime: "Entre 1 e 3 dias úteis",
     address:
       "Avenida Acelino de Leão, 912, Trem, Macapá - 68901092 / RESIDENCIAL NONATO - porta de vidro na frente. Só tocar interfone na porta de vidro",
     deliveryFee: 8,
-    pixName: "M dos S Cunha Ltda",
-    pixKey: "(96)99139 - 5913",
+    pixName: "Lacerda Acessórios ME",
+    pixKey: "(96)99139-5913",
     trackingLink:
-      "https://diggy.menu/67474de9376d4abcb2cb6cef/customer?customerId=67cdb50a5d2ab22a3052189b",
+      "https://lacerda-acessorios.vercel.app/",
   };
 
   const message = generateOrderMessage(cart, orderInfo);
@@ -61,18 +71,27 @@ export default function Header({ change, value }: SectionSearchProps) {
   return (
     <>
       <StyledBox className={scrolled ? "scrolled" : ""}>
-        <StyledHeader>
-          <HeaderTop>
-            <SectionTitle />
-            <CartButton onClick={toggleCart}>
-              <CiShoppingCart size={22} color="#fff" />
-            </CartButton>
-          </HeaderTop>
+        <HeaderContainer>
+          <StyledHeader>
+            <HeaderTop>
+              <SectionTitle />
+              <CartButton onClick={toggleCart}>
+                <CartIconWrapper>
+                  <CiShoppingCart size={22} color="#fff" />
+                  {cart.length > 0 && (
+                    <CartBadge>{cart.reduce((sum, item) => sum + (item.quantity || 1), 0)}</CartBadge>
+                  )}
+                </CartIconWrapper>
+              </CartButton>
+            </HeaderTop>
 
-          <Menu />
-        </StyledHeader>
+            <Menu activeCategory={activeCategory} />
+          </StyledHeader>
+        </HeaderContainer>
 
-        <SectionSearch change={change} value={value} />
+        <SearchWrapper>
+          <SectionSearch change={change} value={value} />
+        </SearchWrapper>
       </StyledBox>
 
       {isCartOpen && (
@@ -92,9 +111,9 @@ export default function Header({ change, value }: SectionSearchProps) {
               <>
                 {cart.map((item) => (
                   <CartItem key={item.name}>
-                    <div className="info">{item.name}</div>
+                    <div className="name">{item.name}</div>
 
-                    <QuantityControls className="controls">
+                    <div className="controls">
                       <button
                         onClick={() => {
                           if ((item.quantity || 1) === 1) {
@@ -110,7 +129,7 @@ export default function Header({ change, value }: SectionSearchProps) {
                       <span>{item.quantity || 1}</span>
 
                       <button onClick={() => increment(item.name)}>+</button>
-                    </QuantityControls>
+                    </div>
 
                     <div  className="price">
                       {(item.price * (item.quantity || 1)).toLocaleString(
@@ -141,7 +160,7 @@ export default function Header({ change, value }: SectionSearchProps) {
                   src="https://cdn-icons-png.flaticon.com/512/124/124034.png"
                   alt="WhatsApp"
                 />
-                Enviar Pedido no WhatsApp
+                Enviar Orçamento no WhatsApp
               </WhatsappButton>
             </CartFooter>
           </CartContentWrapper>
@@ -155,6 +174,8 @@ const StyledHeader = styled.header`
   display: flex;
   flex-direction: column;
   background-color: rgb(6, 4, 168);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
 `;
 
 const StyledBox = styled.div`
@@ -163,9 +184,10 @@ const StyledBox = styled.div`
   top: 0;
   transition: transform 0.7s;
   z-index: 999;
+  background-color: transparent;
 
   &.scrolled {
-    transform: translateY(-50%);
+    transform: translateY(0);
     transition: transform 0.9s;
   }
 
@@ -174,12 +196,19 @@ const StyledBox = styled.div`
   }
 `;
 
+const HeaderContainer = styled.div`
+  width: 100%;
+  background-color: rgb(6, 4, 168);
+`;
+
 const HeaderTop = styled.div`
   width: 100%;
-  margin-top: 10px;
+  margin-top: 0;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  background-color: rgb(6, 4, 168);
+  padding-top: 5px;
 `;
 
 const CartButton = styled.button`
@@ -187,6 +216,36 @@ const CartButton = styled.button`
   border: none;
   cursor: pointer;
   padding: 4px;
+  margin-right: 16px; /* Adicionado margin-right para afastar da borda */
+`;
+
+const CartIconWrapper = styled.div`
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const CartBadge = styled.span`
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  background-color: #ff4d4f;
+  color: white;
+  font-size: 11px;
+  font-weight: bold;
+  height: 16px;
+  width: 16px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+`;
+
+const SearchWrapper = styled.div`
+  background-color: white;
+  padding: 0;
+  width: 100%;
 `;
 
 const CartBottomModal = styled.div`
@@ -284,30 +343,6 @@ const CartItem = styled.div`
 `;
 
 
-
-
-const QuantityControls = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  justify-content: center;
-
-  button {
-    background-color: #007bff;
-    border: none;
-    color: white;
-    font-weight: bold;
-    width: 28px;
-    height: 28px;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-
-  span {
-    min-width: 24px;
-    text-align: center;
-  }
-`;
 
 
 const CartFooter = styled.div`

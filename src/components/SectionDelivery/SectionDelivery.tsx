@@ -6,7 +6,7 @@ export default function SectionDelivery() {
     return (
 
         <StyledSectionDelivery>
-            <IoBicycleSharp size={20} />
+            <IoBicycleSharp size={2} />
             <DeliveryTitle />
         </StyledSectionDelivery>
     )

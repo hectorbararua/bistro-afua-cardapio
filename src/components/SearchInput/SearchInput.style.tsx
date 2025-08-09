@@ -7,7 +7,12 @@ export const StyledSearchInput = styled.input`
     outline: none;
     width: 100%;
     height: 100%;
-    color: #fff;
+    color: rgba(0, 0, 0, 0.7);
+    background-color: transparent;
+    
+    &::placeholder {
+        color: rgba(0, 0, 0, 0.4);
+    }
 
     &::-webkit-search-cancel-button {
         -webkit-appearance: none;
