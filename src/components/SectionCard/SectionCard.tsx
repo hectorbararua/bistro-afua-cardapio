@@ -44,7 +44,13 @@ export default function SectionCard({ list = {} }: SectionCardProps) {
     <>
       <StyledBox>
         {Object.keys(list).map((type) => (
-          <StyledSection key={type}>
+          <StyledSection 
+            key={type} 
+            id={type}
+            data-category={type}
+            className="category-section"
+          >
+            <div className="category-title">{type}</div>
             {list[type as FoodCategory]?.map((item, index) => (
               <StyledCard key={index}>
                 <StyledCardImage src={item.img} alt={item.name} />
@@ -57,12 +63,40 @@ export default function SectionCard({ list = {} }: SectionCardProps) {
                 </StyledCardPrice>
                 <StyledButtonGroup>
                   <StyledCardButton onClick={() => handleView(item)}>
-                    <CiViewList size={18} style={{ marginRight: 4 }} />
-                    Ver
+                    <div style={{ 
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      width: '100%',
+                      height: '100%'
+                    }}>
+                      <CiViewList style={{ verticalAlign: 'middle' }} size={12} />
+                      <span style={{ 
+                        marginLeft: 4, 
+                        display: 'inline-block',
+                        fontSize: '10px',
+                        verticalAlign: 'middle',
+                        lineHeight: 1
+                      }}>Ver</span>
+                    </div>
                   </StyledCardButton>
                   <StyledCardButton primary onClick={() => addToCart(item)}>
-                    <CiShoppingCart size={18} style={{ marginRight: 2 }} />
-                    Adicionar
+                    <div style={{ 
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      width: '100%',
+                      height: '100%'
+                    }}>
+                      <CiShoppingCart style={{ verticalAlign: 'middle' }} size={12} />
+                      <span style={{ 
+                        marginLeft: 4, 
+                        display: 'inline-block',
+                        fontSize: '10px',
+                        verticalAlign: 'middle',
+                        lineHeight: 1
+                      }}>Adicionar</span>
+                    </div>
                   </StyledCardButton>
                 </StyledButtonGroup>
               </StyledCard>

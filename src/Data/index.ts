@@ -2,7 +2,7 @@ import { camarao, carne, picanha, maracuja, tapereba, caju, acerola, goiaba, aba
 
 export type FoodType = Record<FoodCategory, FoodItem[]>
 
-export type FoodCategory = 'Entrada' | 'Pratos Executivos' | 'Pratos Família (Serve 3 Pessoas)' | 'Massa' | 'Adicionais' | 'Sucos' | 'Lonk Necks' | 'Drinks' | 'Bebida' 
+export type FoodCategory = 'Entrada' | 'Fechaduras Vidro/Vidro' | 'Fechaduras Vidro/Alvenaria' | 'Bate-Fecha' | 'Puxadores' | 'Roldanas' | 'Batedores' | 'Silicone' | 'Outros' 
 // | 'Hamburguer' | 'Combos' | 'Adicionais de Hamburger'
 
 
@@ -16,505 +16,505 @@ export interface FoodItem {
 export const typeList: FoodType = {
     Entrada: [
         {
-            name: 'Isca de Filé',
-            description: 'Arroz, feijão, farofa, salada.',
+            name: 'Kit Suporte Fixo Inox',
+            description: 'Kit completo com 4 suportes para vidro temperado',
             price: 40,
             img: fileComFritas
         },
         {
-            name: 'Isca de Peixe',
-            description: '',
+            name: 'Dobradiça para Vidro',
+            description: 'Dobradiça com acabamento cromado',
             price: 30,
             img: iscaDePeixe
         },
         {
-            name: 'Isca de Frango',
-            description: '',
+            name: 'Perfil de Alumínio',
+            description: 'Perfil para acabamento de vidro',
             price: 25,
             img: iscaDeFrango
         },
         {
-            name: 'Camarão no Bafo',
-            description: '',
+            name: 'Mola para Porta de Vidro',
+            description: 'Mola de piso hidráulica para portas',
             price: 40,
             img: camarao
         },
         {
-            name: 'Camarão Rosa Empanado',
-            description: '',
+            name: 'Trinco para Box',
+            description: 'Trinco cromado para porta de box',
             price: 65,
             img: camaraoRosaEmpanado
         },
         {
-            name: 'Camarão Crocante',
-            description: '',
+            name: 'Vedação para Box',
+            description: 'Kit de vedação para box de banheiro',
             price: 75,
             img: camaraoCrocante
         },
         {
-            name: 'Camarão Rosa no Alho e Óleo',
-            description: '',
+            name: 'Pivô para Porta',
+            description: 'Pivô superior e inferior para porta de vidro',
             price: 60,
             img: camaraoRosaAlhoOleo
         },
         {
-            name: 'Carne de Sol c/Macaxeira',
-            description: '',
+            name: 'Fechadura para Vitrine',
+            description: 'Fechadura completa para vitrine',
             price: 40,
             img: carneDeSolComMacaxeira
         },
         {
-            name: 'Chapa Mista c/Macaxeira',
-            description: '',
+            name: 'Puxador Tubular',
+            description: 'Puxador tubular 30cm para porta de vidro',
             price: 40,
             img: chapaMista
         },
         {
-            name: 'Tábua de Frios',
-            description: '',
+            name: 'Kit Fixação Espelho',
+            description: 'Kit completo para fixação de espelho',
             price: 45,
             img: tabuaDeFrio
         },
         {
-            name: 'Calabresa Acebolada',
-            description: '',
+            name: 'Cantoneira de Alumínio',
+            description: 'Cantoneira para acabamento de vidro',
             price: 20,
             img: calabresaAcebolada
         },
         {
-            name: 'Batata Frita',
-            description: '',
+            name: 'Ventosa para Vidro',
+            description: 'Ventosa dupla para transporte de vidro',
             price: 15,
             img: batataFrita
         },
         {
-            name: 'Macaxeira Frita',
-            description: '',
+            name: 'Espaçador para Vidro',
+            description: 'Espaçadores para instalação de vidro',
             price: 15,
             img: macaxeiraFrita
         }
     ],
-    'Pratos Executivos': [
+    'Fechaduras Vidro/Vidro': [
         {
-            name: 'Peixe Empanado',
-            description: 'Arroz, feijão, farofa, salada.',
-            price: 30,
+            name: 'Fechadura 1101 Cromada',
+            description: 'Fechadura para porta de vidro/vidro',
+            price: 130,
             img: pePeixeEmpanado
         },
         {
-            name: 'Peixe na Chapa',
-            description: 'Arroz, feijão, farofa, salada.',
-            price: 30,
+            name: 'Fechadura 1102 Polida',
+            description: 'Fechadura para porta de vidro/vidro com chave',
+            price: 130,
             img: pePeixeNaChapa
         },
         {
-            name: 'Frango na Chapa',
-            description: 'Arroz, feijão, farofa, salada.',
-            price: 25,
+            name: 'Fechadura 1103 Escovada',
+            description: 'Fechadura para porta de vidro/vidro com trinco',
+            price: 125,
             img: peFrangoNaChapa
         },
         {
-            name: 'Frango Empanado',
-            description: 'Arroz, feijão, farofa, salada.',
-            price: 25,
+            name: 'Fechadura 1104 Inox',
+            description: 'Fechadura premium para porta de vidro/vidro',
+            price: 125,
             img: peFrangoEmpanado
         },
         {
-            name: 'Bife Acebolado',
-            description: 'Arroz, feijão, farofa, salada.',
-            price: 30,
+            name: 'Fechadura 1105 Dourada',
+            description: 'Fechadura com acabamento dourado para vidro/vidro',
+            price: 130,
             img: peBifeAcebolado
         },
         {
-            name: 'Bife Com fritas',
-            description: 'Arroz, feijão, batata frita, farofa, salada.',
-            price: 32,
+            name: 'Fechadura 1201 Quadrada',
+            description: 'Fechadura quadrada para porta de vidro/vidro',
+            price: 132,
             img: peBifeComFritas
         },
         {
-            name: 'Bife a Cavalo',
-            description: 'Arroz, feijão, batata frita, farofa, salada, ovo.',
-            price: 35,
+            name: 'Fechadura 1202 Redonda',
+            description: 'Fechadura redonda para porta de vidro/vidro',
+            price: 135,
             img: carne
         },
         {
-            name: 'Picanha na Chapa',
-            description: 'Arroz, feijão, farofa, salada.',
-            price: 40,
+            name: 'Fechadura 1203 Oval',
+            description: 'Fechadura oval para porta de vidro/vidro',
+            price: 140,
             img: picanha
         },
         {
-            name: 'Charque',
-            description: 'Arroz, feijão, farofa, salada.',
-            price: 50,
+            name: 'Fechadura 1204 Mini',
+            description: 'Fechadura mini para porta de vidro/vidro',
+            price: 150,
             img: peCharque
         },
         {
-            name: 'Mista',
-            description: 'Baião, farofa, macaxeira, salada.',
-            price: 40,
+            name: 'Fechadura 1205 Dupla',
+            description: 'Fechadura dupla para porta de vidro/vidro',
+            price: 140,
             img: chapaMista
         },
         {
-            name: 'Carne de Sol',
-            description: 'Baião, farofa, macaxeira, salada.',
-            price: 40,
+            name: 'Fechadura 1206 Banheiro',
+            description: 'Fechadura para porta de banheiro vidro/vidro',
+            price: 140,
             img: peCarneDeSol
         },
         {
-            name: 'Salada de Camarão',
-            description: '',
-            price: 40,
+            name: 'Fechadura 1207 Escritório',
+            description: 'Fechadura para porta de escritório vidro/vidro',
+            price: 140,
             img: peSaladaDeCamarao
         }, 
         {
-            name: 'Toscana na Chapa',
-            description: 'Arroz, feijão, farofa, salada.',
-            price: 18,
+            name: 'Fechadura 1208 Alta',
+            description: 'Fechadura alta para porta de vidro/vidro',
+            price: 118,
             img: peToscanaNaChapa
         },
         {
-            name: 'Calabresa na Chapa',
-            description: 'Arroz, feijão, farofa, salada.',
-            price: 18,
+            name: 'Fechadura 1209 Baixa',
+            description: 'Fechadura baixa para porta de vidro/vidro',
+            price: 118,
             img: peCalabresaNaChapa
         }
     ],
-    'Pratos Família (Serve 3 Pessoas)': [
+    'Fechaduras Vidro/Alvenaria': [
         {
-            name: 'Camarão Rosa ao Molho Branco',
-            description: 'Arroz, batata palha.',
+            name: 'Fechadura 2101 Cromada',
+            description: 'Fechadura para porta de vidro/alvenaria',
             price: 150,
             img: pfcamaraoRosaAoMolhoBranco
         },
         {
-            name: 'Picanha',
-            description: 'Arroz, feijão, farofa, salada, vinagrete.',
+            name: 'Fechadura 2102 Polida',
+            description: 'Fechadura para porta de vidro/alvenaria com chave',
             price: 120,
             img: pfPicanha
         },
         {
-            name: 'Chapa Mista',
-            description: 'Arroz, feijão, farofa, salada.',
+            name: 'Fechadura 2103 Escovada',
+            description: 'Fechadura para porta de vidro/alvenaria com trinco',
             price: 100,
             img: pfChapaMista
         },
         {
-            name: 'Mista Marajoara',
-            description: 'Peixe, frango, charque, calabresa, toscana, picanha, camarão rosa, arroz, farofa, feijão, baião sala, batata.',
+            name: 'Fechadura 2104 Premium',
+            description: 'Fechadura premium para porta de vidro/alvenaria',
             price: 160,
             img: pfChapaMista
         },
         {
-            name: 'Filé Com fritas',
-            description: 'Arroz, feijão, farofa, salada.',
+            name: 'Fechadura 2201 Quadrada',
+            description: 'Fechadura quadrada para porta de vidro/alvenaria',
             price: 100,
             img: pfFileComFritas
         },
         {
-            name: 'Filé ao Molho Madeira',
-            description: 'Arroz, farofa, batata palha.',
+            name: 'Fechadura 2202 Redonda',
+            description: 'Fechadura redonda para porta de vidro/alvenaria',
             price: 120,
             img: pfFileAoMolhoMadeira
         },
         {
-            name: 'Peixe Empanado',
-            description: 'Arroz, feijão, farofa, salada.',
+            name: 'Fechadura 2203 Oval',
+            description: 'Fechadura oval para porta de vidro/alvenaria',
             price: 95,
             img: pfPeixeEmpanado
         },
         {
-            name: 'Peixe na Chapa',
-            description: 'Arroz, feijão, farofa, salada.',
+            name: 'Fechadura 2204 Mini',
+            description: 'Fechadura mini para porta de vidro/alvenaria',
             price: 95,
             img: pePeixeNaChapa
         },
         {
-            name: 'Frango Empanado',
-            description: 'Arroz, feijão, farofa, salada.',
+            name: 'Fechadura 2205 Dupla',
+            description: 'Fechadura dupla para porta de vidro/alvenaria',
             price: 80,
             img: peFrangoEmpanado
         },
         {
-            name: 'Frango na Chapa',
-            description: 'Arroz, feijão, farofa, salada.',
+            name: 'Fechadura 2206 Banheiro',
+            description: 'Fechadura para porta de banheiro vidro/alvenaria',
             price: 80,
             img: peFrangoNaChapa
         }, 
         {
-            name: 'Carne de Sol',
-            description: 'Baião, farofa, macaxeira, vinagrete, salada.',
+            name: 'Fechadura 2207 Escritório',
+            description: 'Fechadura para porta de escritório vidro/alvenaria',
             price: 110,
             img: carneDeSolComMacaxeira
         },
         {
-            name: 'Peixe ao Molho Branco com Camarão Regional',
-            description: 'Arroz, farofa, fritas.',
+            name: 'Fechadura 2208 Alta',
+            description: 'Fechadura alta para porta de vidro/alvenaria',
             price: 120,
             img: pfPeixeAoMolhoBranco
         },
         {
-            name: 'Peixe ao Molho Branco com Camarão Rosa',
-            description: 'Arroz, farofa, fritas.',
+            name: 'Fechadura 2209 Baixa',
+            description: 'Fechadura baixa para porta de vidro/alvenaria',
             price: 150,
             img: pfPeixeAoMolhoBranco
         },
         {
-            name: 'Peixe a Parmegiana',
-            description: 'Arroz, farofa, fritas.',
+            name: 'Fechadura 2210 Frontal',
+            description: 'Fechadura frontal para porta de vidro/alvenaria',
             price: 120,
             img: pfPeixeAParmegiana
         },
         {
-            name: 'Bife a Parmegiana',
-            description: 'Arroz, farofa, fritas.',
+            name: 'Fechadura 2211 Lateral',
+            description: 'Fechadura lateral para porta de vidro/alvenaria',
             price: 120,
             img: pfBifeAParmegiana
         },
     ],
-    Massa: [
+    'Bate-Fecha': [
         {
-            name: 'Lasanha de Carne(serve 2 pessoas)',
-            description: '',
+            name: 'Bate-Fecha Magnético',
+            description: 'Bate-fecha magnético para porta de vidro',
             price: 50,
             img: lasanhaDeCarne
         },
         {
-            name: 'Lasanha de Frango(serve 2 pessoas)',
-            description: '',
+            name: 'Bate-Fecha com Mola',
+            description: 'Bate-fecha com mola de pressão',
             price: 50,
             img: lasanhaDeFrango
         },
         {
-            name: 'Espaguete de Camarão(serve 3 pessoas)',
-            description: '',
+            name: 'Bate-Fecha Premium',
+            description: 'Bate-fecha de alta resistência',
             price: 160,
             img: espagueteCamaraoRosa
         }
     ],
-    Adicionais: [
+    'Puxadores': [
         {
-            name: 'Macarrão',
-            description: '',
-            price: 6,
+            name: 'Puxador Tubular 20cm',
+            description: 'Puxador tubular 20cm em inox',
+            price: 60,
             img: macarrao
         },
         {
-            name: 'Arroz',
-            description: '',
-            price: 8,
+            name: 'Puxador Tubular 30cm',
+            description: 'Puxador tubular 30cm em inox',
+            price: 80,
             img: arroz
         },
         {
-            name: 'Farofa',
-            description: '',
-            price: 6,
+            name: 'Puxador Tubular 40cm',
+            description: 'Puxador tubular 40cm em inox',
+            price: 60,
             img: farofa
         },
         {
-            name: 'Feijão',
-            description: '',
-            price: 10,
+            name: 'Puxador H 30cm',
+            description: 'Puxador formato H 30cm em inox',
+            price: 100,
             img: feijao
         },
         {
-            name: 'Baião de dois',
-            description: '',
-            price: 10,
+            name: 'Puxador H 40cm',
+            description: 'Puxador formato H 40cm em inox',
+            price: 100,
             img: baiaoDeDois
         },
         {
-            name: 'Açaí(500ml)',
-            description: '',
-            price: 15,
+            name: 'Puxador Quadrado',
+            description: 'Puxador quadrado em alumínio',
+            price: 150,
             img: acai
         },
         {
-            name: 'Salada',
-            description: '',
-            price: 10,
+            name: 'Puxador Redondo',
+            description: 'Puxador redondo em alumínio',
+            price: 100,
             img: salada
         },
         {
-            name: 'Salada de Camarão',
-            description: '',
-            price: 10,
+            name: 'Puxador Decorativo',
+            description: 'Puxador decorativo em aço inox',
+            price: 100,
             img: saladaDeCamaraoPocao
         }
     ],
-    Sucos: [
+    'Roldanas': [
         {
-            name: 'Maracujá',
-            description: '',
-            price: 12,
+            name: 'Roldana Simples',
+            description: 'Roldana simples para porta de correr',
+            price: 120,
             img: maracuja
         },
         {
-            name: 'Tapereba',
-            description: '',
-            price: 10,
+            name: 'Roldana Dupla',
+            description: 'Roldana dupla para porta de correr',
+            price: 100,
             img: tapereba
         },
         {
-            name: 'Cajú',
-            description: '',
-            price: 10,
+            name: 'Roldana Regulável',
+            description: 'Roldana com regulagem de altura',
+            price: 100,
             img: caju
         },
         {
-            name: 'Acerola',
-            description: '',
-            price: 10,
+            name: 'Roldana Superior',
+            description: 'Roldana para instalação superior',
+            price: 100,
             img: acerola
         },
         {
-            name: 'Goiaba',
-            description: '',
-            price: 10,
+            name: 'Roldana Inferior',
+            description: 'Roldana para instalação inferior',
+            price: 100,
             img: goiaba
         },
         {
-            name: 'Abacaxi',
-            description: '',
-            price: 10,
+            name: 'Roldana Aparente',
+            description: 'Roldana aparente para porta de correr',
+            price: 100,
             img: abacaxi
         },
         {
-            name: 'Limonada',
-            description: '',
-            price: 10,
+            name: 'Roldana Embutida',
+            description: 'Roldana embutida para porta de correr',
+            price: 100,
             img: limonada
         },
         {
-            name: 'Detox',
-            description: '',
-            price: 10,
+            name: 'Kit Roldanas Premium',
+            description: 'Kit completo de roldanas para porta de correr',
+            price: 100,
             img: detox
         }
     ],
-    "Lonk Necks": [
+    'Batedores': [
         {
-            name: 'Heineken',
-            description: '',
-            price: 11,
+            name: 'Batedor de Porta Simples',
+            description: 'Batedor simples para porta de vidro',
+            price: 110,
             img: heineken
         },
         {
-            name: 'Budweiser',
-            description: '',
-            price: 10,
+            name: 'Batedor de Porta Duplo',
+            description: 'Batedor duplo para porta de vidro',
+            price: 100,
             img: budweiser
         },
         {
-            name: 'Corona',
-            description: '',
-            price: 11,
+            name: 'Batedor de Parede',
+            description: 'Batedor para fixar na parede',
+            price: 110,
             img: corona
         },
         {
-            name: 'Ice',
-            description: '',
-            price: 10,
+            name: 'Batedor de Piso',
+            description: 'Batedor para fixar no piso',
+            price: 100,
             img: ice
         },
         {
-            name: 'Skol',
-            description: 'Garrafa de 600ML.',
-            price: 12,
+            name: 'Batedor Magnético',
+            description: 'Batedor com imã para porta de vidro',
+            price: 120,
             img: skol600ml
         },
         {
-            name: 'Budweiser',
-            description: 'Garrafa de 600ML.',
-            price: 14,
+            name: 'Batedor Premium',
+            description: 'Batedor de alta qualidade para porta de vidro',
+            price: 140,
             img: budweiser600ml
         },
         {
-            name: 'Heineken',
-            description: 'Garrafa de 600ML.',
-            price: 20,
+            name: 'Kit Batedor Completo',
+            description: 'Kit completo de batedores para porta de vidro',
+            price: 200,
             img: heineken
         }
     ],
-    Drinks: [
+    'Silicone': [
         {
-            name: 'Caipirinha',
-            description: '',
-            price: 12,
+            name: 'Silicone Neutro Incolor',
+            description: 'Silicone neutro para vidro - 280ml',
+            price: 120,
             img: caipirinha
         },
         {
-            name: 'Caipirosca',
-            description: '',
-            price: 14,
+            name: 'Silicone Acético Incolor',
+            description: 'Silicone acético para vidro - 280ml',
+            price: 140,
             img: caipirosca
         },
         {
-            name: 'Frozen',
-            description: '',
-            price: 15,
+            name: 'Silicone Estrutural',
+            description: 'Silicone estrutural para vidro - 380ml',
+            price: 150,
             img: frozen
         },
         {
-            name: 'Gin Tropical',
-            description: '',
-            price: 15,
+            name: 'Silicone UV Transparente',
+            description: 'Silicone resistente a UV - 280ml',
+            price: 150,
             img: ginTropical
         },
         {
-            name: 'Daiquiri',
-            description: '',
-            price: 15,
+            name: 'Silicone para Box',
+            description: 'Silicone específico para box de banheiro',
+            price: 150,
             img: daiquiri
         },
         {
-            name: 'Dry Martini',
-            description: '',
-            price: 15,
+            name: 'Silicone para Espelho',
+            description: 'Silicone específico para fixação de espelhos',
+            price: 150,
             img: dryMartini
         },
         {
-            name: 'Cuba Libre',
-            description: '',
-            price: 15,
+            name: 'Silicone Neutro Preto',
+            description: 'Silicone neutro preto para vidro - 280ml',
+            price: 150,
             img: cubaLibre
         },
         {
-            name: 'Piná Colada',
-            description: '',
-            price: 15,
+            name: 'Silicone Neutro Branco',
+            description: 'Silicone neutro branco para vidro - 280ml',
+            price: 150,
             img: pinaColada
         },
         {
-            name: 'Negrone',
-            description: '',
-            price: 15,
+            name: 'Silicone Alta Temperatura',
+            description: 'Silicone resistente a altas temperaturas',
+            price: 150,
             img: negrone
         }
     ],
-    Bebida: [
+    'Outros': [
         {
-            name: 'Água',
-            description: '',
-            price: 3,
+            name: 'Aplicador de Silicone',
+            description: 'Aplicador profissional de silicone',
+            price: 30,
             img: agua
         },
         {
-            name: 'Refrigerante Lata',
-            description: '',
-            price: 5,
+            name: 'Espaçadores Plásticos',
+            description: 'Conjunto de espaçadores plásticos para vidro',
+            price: 50,
             img: refrigeranteLata
         },
         {
-            name: 'Refrigerante 1LT',
-            description: '',
-            price: 10,
+            name: 'Kit Ferramentas Vidraceiro',
+            description: 'Kit básico de ferramentas para vidraceiro',
+            price: 100,
             img: refrigerante1Litro
         },
         {
-            name: 'Energético',
-            description: '',
-            price: 15,
+            name: 'Cantoneiras para Vidro',
+            description: 'Conjunto de cantoneiras para proteção de vidro',
+            price: 150,
             img: energetico
         }
     ],

@@ -4,7 +4,7 @@ export default function SubTitle() {
 
   return (
     <StyledSubTitle>
-      Lacerda Acessórios
+      Especialista em Acessórios para Vidraçaria
     </StyledSubTitle>
   )
 

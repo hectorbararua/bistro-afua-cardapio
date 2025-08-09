@@ -1,21 +1,28 @@
 import MenuTitle from "../MenuTitle/MenuTitle";
 import { StyledMenu } from "./Menu.style";
+import { useEffect } from "react";
 
-export default function Menu() {
+interface MenuProps {
+    activeCategory: string;
+}
+
+export default function Menu({ activeCategory }: MenuProps) {
+    // Log para debug quando a categoria ativa mudar
+    useEffect(() => {
+        console.log('Menu recebeu activeCategory:', activeCategory);
+    }, [activeCategory]);
+
     return (
-        <StyledMenu >
-            <MenuTitle title="Todos" href="#Entrada" />
-            <MenuTitle title="Fechaduras Vidro/Vidro" href="#Pratos Executivos" />
-            <MenuTitle title="Fechaduras Vidro/Alvenaria" href="#Pratos Família (Serve 3 Pessoas)" />
-            <MenuTitle title="Bate-Fecha" href="#Massa" />
-            <MenuTitle title="Puxadores" href="#Adicionais" />
-            <MenuTitle title="Roldanas" href="#Sucos" />
-            <MenuTitle title="Batedores" href="#Lonk Necks" />
-            <MenuTitle title="Silicone" href="#Drinks" />
-            <MenuTitle title="Outros" href="#Bebida" />
-            {/* <MenuTitle title="Hamburguer" href="#Hamburguer" />
-            <MenuTitle title="Combos" href="#Combos" />
-            <MenuTitle title="Adicionais de Hamburger" href="#Adicionais de Hamburger" /> */}
+        <StyledMenu>
+            <MenuTitle title="Todos" href="#Entrada" active={activeCategory === 'Entrada'} />
+            <MenuTitle title="Fechaduras Vidro/Vidro" href="#Fechaduras Vidro/Vidro" active={activeCategory === 'Fechaduras Vidro/Vidro'} />
+            <MenuTitle title="Fechaduras Vidro/Alvenaria" href="#Fechaduras Vidro/Alvenaria" active={activeCategory === 'Fechaduras Vidro/Alvenaria'} />
+            <MenuTitle title="Bate-Fecha" href="#Bate-Fecha" active={activeCategory === 'Bate-Fecha'} />
+            <MenuTitle title="Puxadores" href="#Puxadores" active={activeCategory === 'Puxadores'} />
+            <MenuTitle title="Roldanas" href="#Roldanas" active={activeCategory === 'Roldanas'} />
+            <MenuTitle title="Batedores" href="#Batedores" active={activeCategory === 'Batedores'} />
+            <MenuTitle title="Silicone" href="#Silicone" active={activeCategory === 'Silicone'} />
+            <MenuTitle title="Outros" href="#Outros" active={activeCategory === 'Outros'} />
         </StyledMenu>
     )
 } 

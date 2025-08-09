@@ -31,8 +31,10 @@ export default function BottomModal({ isOpen, onClose, item, onAdd }: BottomModa
           })}
         </Price>
         <AddButton onClick={onAdd}>
-          <CiShoppingCart size={22} style={{ marginRight: 1 }} />
-          Adicionar ao Pedido
+          <ButtonContent>
+            <CiShoppingCart size={18} />
+            <ButtonText>Adicionar ao Pedido</ButtonText>
+          </ButtonContent>
         </AddButton>
       </ModalContent>
     </Overlay>
@@ -94,22 +96,35 @@ const Price = styled.p`
   margin-bottom: 16px;
 `;
 
+const ButtonContent = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+`;
+
+const ButtonText = styled.span`
+  display: inline-block;
+  line-height: 18px; /* Mesma altura do ícone */
+  vertical-align: middle;
+`;
+
 const AddButton = styled.button`
   width: 100%;
   background-color: #007bff;
   color: white;
   font-size: 14px;
-  padding: 12px;
+  padding: 0;
   border: none;
   border-radius: 8px;
   cursor: pointer;
   font-weight: bold;
-
+  height: 48px;
+  
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-
+  
   &:hover {
     background-color: #0056b3;
   }
